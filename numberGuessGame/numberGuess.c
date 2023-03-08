@@ -1,11 +1,13 @@
+#include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 int main(void)
 {
-  printf("0~9の整数を当てよう!\n\n");
+  srand(time(NULL));
+  printf("0~999の整数を当てよう!\n\n");
 
-  int ans = rand() % 10 + 1;
+  int ans = rand() % 1000;
   int no;
 
   // ここは無限ループだけどbreak文があるからそれで抜けられる
