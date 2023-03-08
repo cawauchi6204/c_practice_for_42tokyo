@@ -8,7 +8,8 @@ int main(void)
   int ans = rand() % 10 + 1;
   int no;
 
-  do
+  // ここは無限ループだけどbreak文があるからそれで抜けられる
+  while (1)
   {
     printf("いくつかな:");
     scanf("%d", &no);
@@ -17,7 +18,9 @@ int main(void)
       printf("もっと小さいよ。\a\n");
     if (no < ans)
       printf("もっと大きいよ。\a\n");
-  } while (no != ans);
+    if (no == ans)
+      break;
+  };
   printf("正解です。\n");
 
   return 0;
