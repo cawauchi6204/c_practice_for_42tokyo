@@ -22,6 +22,10 @@ int main(void)
   {
     printf("残り%dいくつかな:", MAX_STAGE - stage);
     scanf("%d", &no);
+    // ここではstageとnumどちらも値を変化させている
+    // 自分だったら以下のように書く(こっちの方がわかりやすいと思うから)
+    // stage++
+    // num[stage] = no;
     num[stage++] = no;
 
     if (no > ans)
