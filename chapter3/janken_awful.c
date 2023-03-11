@@ -4,11 +4,9 @@
 
 int main(void)
 {
-  srand(time(NULL));
+  char *hd[] = {"グー", "チョキ", "パー"};
 
-  int rock = 0;
-  int scissors = 1;
-  int paper = 2;
+  srand(time(NULL));
 
   while (1)
   {
@@ -16,10 +14,10 @@ int main(void)
     int comp_hand = rand() % 3;
     printf("%d", comp_hand);
 
-    printf("どの手を出しますか？ [0]グー [1] チョキ [2] パー : \n");
+    printf("どの手を出しますか？ [0] %s [1] %s [2] %s : \n", hd[0], hd[1], hd[2]);
     int player_hand;
     scanf("%d", &player_hand);
-    printf("あなた: %d コンピューター: %d", player_hand, comp_hand);
+    printf("あなた: %s コンピューター: %s\n", hd[player_hand], hd[comp_hand]);
 
     int result = (player_hand - comp_hand) % 3;
     if (result == 0)
